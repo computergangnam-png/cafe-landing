@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>모카빈 카페 | Mocha Bean Cafe</title>
+<style>
+  :root {
+    --brown-dark: #3b2418;
+    --brown: #6f4e37;
+    --brown-light: #a9744f;
+    --cream: #f7f1e8;
+    --cream-dark: #ece1d0;
+    --accent: #c98a4b;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+    background: var(--cream);
+    color: var(--brown-dark);
+    line-height: 1.6;
+  }
+  header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 6%;
+    background: rgba(59, 36, 24, 0.9);
+    z-index: 100;
+  }
+  header .logo {
+    color: var(--cream);
+    font-size: 1.4rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+  nav a {
+    color: var(--cream);
+    text-decoration: none;
+    margin-left: 28px;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+  }
+  nav a:hover { color: var(--accent); }
+
+  .hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(rgba(59,36,24,0.55), rgba(59,36,24,0.55)),
+      url('https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=1600') center/cover no-repeat;
+    color: var(--cream);
+    padding: 0 20px;
+  }
+  .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 16px;
+  }
+  .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 32px;
+    max-width: 560px;
+  }
+  .btn {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--brown-dark);
+    padding: 14px 36px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.2s, background 0.2s;
+  }
+  .btn:hover {
+    background: var(--cream);
+    transform: translateY(-3px);
+  }
+
+  section { padding: 90px 8%; }
+  .section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 12px;
+    color: var(--brown);
+  }
+  .section-sub {
+    text-align: center;
+    color: var(--brown-light);
+    margin-bottom: 50px;
+  }
+
+  .about {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+  }
+  .about img {
+    flex: 1 1 400px;
+    max-width: 480px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  }
+  .about-text { flex: 1 1 300px; }
+  .about-text h2 { color: var(--brown); margin-bottom: 16px; font-size: 1.8rem; }
+
+  .menu { background: var(--cream-dark); }
+  .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+  }
+  .menu-item {
+    background: var(--cream);
+    border-radius: 12px;
+    padding: 24px;
+    text-align: center;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    transition: transform 0.2s;
+  }
+  .menu-item:hover { transform: translateY(-6px); }
+  .menu-item .icon { font-size: 2.5rem; margin-bottom: 10px; }
+  .menu-item h3 { color: var(--brown); margin-bottom: 6px; }
+  .menu-item .price { color: var(--accent); font-weight: bold; margin-top: 10px; }
+
+  .info {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+  .info-item h3 { color: var(--brown); margin-bottom: 10px; }
+
+  footer {
+    background: var(--brown-dark);
+    color: var(--cream);
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 2.1rem; }
+    nav a { margin-left: 14px; font-size: 0.85rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">☕ 모카빈 카페</div>
+  <nav>
+    <a href="#about">소개</a>
+    <a href="#menu">메뉴</a>
+    <a href="#info">오시는 길</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>당신의 하루에 향긋한 쉼표</h1>
+  <p>정성껏 로스팅한 원두로 내린 커피와 따뜻한 공간에서 여유를 느껴보세요.</p>
+  <a href="#menu" class="btn">메뉴 보러가기</a>
+</section>
+
+<section class="about" id="about">
+  <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800" alt="카페 내부 전경">
+  <div class="about-text">
+    <h2>모카빈 카페 이야기</h2>
+    <p>2018년, 작은 골목에서 시작한 모카빈 카페는 좋은 원두와 편안한 공간을 만드는 것을 최우선으로 생각합니다. 매일 아침 직접 로스팅한 원두로 신선한 커피를 내려드리며, 조용히 책을 읽거나 대화를 나누기 좋은 아늑한 분위기를 만들어가고 있습니다.</p>
+  </div>
+</section>
+
+<section class="menu" id="menu">
+  <h2 class="section-title">메뉴</h2>
+  <p class="section-sub">엄선한 원두와 신선한 재료로 만든 음료</p>
+  <div class="menu-grid">
+    <div class="menu-item">
+      <div class="icon">☕</div>
+      <h3>아메리카노</h3>
+      <p>깔끔하고 깊은 풍미</p>
+      <div class="price">4,500원</div>
+    </div>
+    <div class="menu-item">
+      <div class="icon">🥛</div>
+      <h3>카페라떼</h3>
+      <p>부드러운 우유 거품</p>
+      <div class="price">5,000원</div>
+    </div>
+    <div class="menu-item">
+      <div class="icon">🍫</div>
+      <h3>카페모카</h3>
+      <p>진한 초콜릿과 에스프레소</p>
+      <div class="price">5,500원</div>
+    </div>
+    <div class="menu-item">
+      <div class="icon">🧊</div>
+      <h3>콜드브루</h3>
+      <p>12시간 저온 추출</p>
+      <div class="price">5,500원</div>
+    </div>
+    <div class="menu-item">
+      <div class="icon">🍰</div>
+      <h3>치즈케이크</h3>
+      <p>촉촉하고 부드러운 디저트</p>
+      <div class="price">6,000원</div>
+    </div>
+    <div class="menu-item">
+      <div class="icon">🥐</div>
+      <h3>버터 크루아상</h3>
+      <p>매일 아침 구워내는 페이스트리</p>
+      <div class="price">4,200원</div>
+    </div>
+  </div>
+</section>
+
+<section id="info">
+  <h2 class="section-title">오시는 길</h2>
+  <p class="section-sub">언제든 편하게 들러주세요</p>
+  <div class="info">
+    <div class="info-item">
+      <h3>주소</h3>
+      <p>서울특별시 강남구 커피로 123<br>모카빈 빌딩 1층</p>
+    </div>
+    <div class="info-item">
+      <h3>영업시간</h3>
+      <p>매일 08:00 - 22:00<br>연중무휴</p>
+    </div>
+    <div class="info-item">
+      <h3>연락처</h3>
+      <p>02-1234-5678<br>mochabean.cafe@example.com</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2026 모카빈 카페. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
