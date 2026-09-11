@@ -128,6 +128,14 @@
   .menu-item h3 { color: var(--brown); margin-bottom: 6px; }
   .menu-item .price { color: var(--accent); font-weight: bold; margin-top: 10px; }
 
+  .chart-section { background: var(--cream); }
+  .chart-wrap {
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow-x: auto;
+  }
+  .chart-wrap svg { width: 100%; height: auto; display: block; }
+
   .info {
     display: flex;
     justify-content: center;
@@ -158,6 +166,7 @@
   <nav>
     <a href="#about">소개</a>
     <a href="#menu">메뉴</a>
+    <a href="#chart">인기 메뉴</a>
     <a href="#info">오시는 길</a>
   </nav>
 </header>
@@ -216,6 +225,68 @@
       <p>매일 아침 구워내는 페이스트리</p>
       <div class="price">4,200원</div>
     </div>
+  </div>
+</section>
+
+<section class="chart-section" id="chart">
+  <h2 class="section-title">인기 메뉴</h2>
+  <p class="section-sub">하루 평균 판매량 (잔/개 기준)</p>
+  <div class="chart-wrap">
+    <svg viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="menu-bar-title menu-bar-desc">
+      <title id="menu-bar-title">모카빈 카페 인기 메뉴 판매 차트</title>
+      <desc id="menu-bar-desc">아메리카노가 하루 평균 320잔으로 가장 많이 팔리고, 카페라떼·치즈케이크·콜드브루·카페모카·크루아상이 뒤를 잇는 막대그래프</desc>
+
+      <rect width="100%" height="100%" fill="#f7f1e8"/>
+
+      <!-- gridlines -->
+      <line x1="80" y1="440" x2="960" y2="440" stroke="rgba(59,36,24,0.25)" stroke-width="1"/>
+      <line x1="80" y1="360" x2="960" y2="360" stroke="rgba(59,36,24,0.08)" stroke-width="0.8"/>
+      <line x1="80" y1="280" x2="960" y2="280" stroke="rgba(59,36,24,0.08)" stroke-width="0.8"/>
+      <line x1="80" y1="200" x2="960" y2="200" stroke="rgba(59,36,24,0.08)" stroke-width="0.8"/>
+      <line x1="80" y1="120" x2="960" y2="120" stroke="rgba(59,36,24,0.08)" stroke-width="0.8"/>
+      <line x1="80" y1="40" x2="960" y2="40" stroke="rgba(59,36,24,0.08)" stroke-width="0.8"/>
+
+      <!-- y-axis labels -->
+      <text x="72" y="443" fill="#a9744f" font-size="9" text-anchor="end">0</text>
+      <text x="72" y="363" fill="#a9744f" font-size="9" text-anchor="end">80</text>
+      <text x="72" y="283" fill="#a9744f" font-size="9" text-anchor="end">160</text>
+      <text x="72" y="203" fill="#a9744f" font-size="9" text-anchor="end">240</text>
+      <text x="72" y="123" fill="#a9744f" font-size="9" text-anchor="end">320</text>
+      <text x="72" y="43" fill="#a9744f" font-size="9" text-anchor="end">400</text>
+
+      <!-- 아메리카노 (focal) -->
+      <rect x="112" y="120" width="96" height="320" fill="rgba(201,138,75,0.15)" stroke="#c98a4b" stroke-width="1.2"/>
+      <text x="160" y="110" fill="#c98a4b" font-size="12" font-weight="600" text-anchor="middle">320</text>
+      <text x="160" y="458" fill="#3b2418" font-size="12" font-weight="600" text-anchor="middle">아메리카노</text>
+
+      <!-- 카페라떼 -->
+      <rect x="256" y="160" width="96" height="280" fill="rgba(111,78,55,0.12)" stroke="#6f4e37" stroke-width="1"/>
+      <text x="304" y="150" fill="#6f4e37" font-size="11" text-anchor="middle">280</text>
+      <text x="304" y="458" fill="#3b2418" font-size="12" font-weight="600" text-anchor="middle">카페라떼</text>
+
+      <!-- 카페모카 -->
+      <rect x="400" y="250" width="96" height="190" fill="rgba(111,78,55,0.12)" stroke="#6f4e37" stroke-width="1"/>
+      <text x="448" y="240" fill="#6f4e37" font-size="11" text-anchor="middle">190</text>
+      <text x="448" y="458" fill="#3b2418" font-size="12" font-weight="600" text-anchor="middle">카페모카</text>
+
+      <!-- 콜드브루 -->
+      <rect x="544" y="215" width="96" height="225" fill="rgba(111,78,55,0.12)" stroke="#6f4e37" stroke-width="1"/>
+      <text x="592" y="205" fill="#6f4e37" font-size="11" text-anchor="middle">225</text>
+      <text x="592" y="458" fill="#3b2418" font-size="12" font-weight="600" text-anchor="middle">콜드브루</text>
+
+      <!-- 치즈케이크 -->
+      <rect x="688" y="195" width="96" height="245" fill="rgba(111,78,55,0.12)" stroke="#6f4e37" stroke-width="1"/>
+      <text x="736" y="185" fill="#6f4e37" font-size="11" text-anchor="middle">245</text>
+      <text x="736" y="458" fill="#3b2418" font-size="12" font-weight="600" text-anchor="middle">치즈케이크</text>
+
+      <!-- 버터 크루아상 -->
+      <rect x="832" y="290" width="96" height="150" fill="rgba(111,78,55,0.12)" stroke="#6f4e37" stroke-width="1"/>
+      <text x="880" y="280" fill="#6f4e37" font-size="11" text-anchor="middle">150</text>
+      <text x="880" y="458" fill="#3b2418" font-size="12" font-weight="600" text-anchor="middle">크루아상</text>
+
+      <!-- y-axis line -->
+      <line x1="80" y1="40" x2="80" y2="440" stroke="rgba(59,36,24,0.25)" stroke-width="1"/>
+    </svg>
   </div>
 </section>
 
