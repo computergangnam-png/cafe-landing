@@ -20,9 +20,22 @@
     color: var(--brown-dark);
     line-height: 1.6;
   }
-  header {
+  .top-banner {
     position: fixed;
     top: 0; left: 0; right: 0;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--accent);
+    color: var(--brown-dark);
+    font-size: 0.9rem;
+    font-weight: bold;
+    z-index: 101;
+  }
+  header {
+    position: fixed;
+    top: 36px; left: 0; right: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -160,6 +173,8 @@
 </style>
 </head>
 <body>
+
+<div class="top-banner">클라우드 세션 작업 테스트</div>
 
 <header>
   <div class="logo">☕ 모카빈 카페</div>
